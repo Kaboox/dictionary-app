@@ -1,0 +1,261 @@
+@use "_colors.scss";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	// justify-content: center;
+	// align-items: center;
+	min-height: 100vh;
+	font-size: 1rem;
+	background-color: var(--white-background);
+}
+
+.wrapper {
+	width: 90%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em 0;
+
+	.nav-right {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+
+		select {
+			background: none;
+			border: none;
+			font-weight: bold;
+
+			option {
+				// padding: 1em;
+				font-weight: bold;
+			}
+		}
+		.line {
+			width: 1px;
+			height: 40px;
+			margin: 0em 0.5em;
+			background-color: rgba(100, 100, 100, 0.2);
+		}
+
+		.switch {
+			position: relative;
+			display: inline-block;
+			width: 60px;
+			height: 34px;
+
+			input {
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
+
+			.slider {
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border-radius: 34px;
+				background-color: #585555;
+				transition: 0.4s;
+			}
+
+			.slider::before {
+				position: absolute;
+				content: "";
+				height: 26px;
+				width: 26px;
+				left: 4px;
+				bottom: 4px;
+				border-radius: 50%;
+				background-color: white;
+				transition: 0.4s;
+			}
+
+			input:checked + .slider {
+				background-color: rgb(177, 46, 151);
+			}
+
+			input:focus + .slider {
+				box-shadow: 0 0 1px #2196f3;
+			}
+
+			input:checked + .slider::before {
+				transform: translateX(26px);
+			}
+		}
+	}
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    
+	margin-top: 1em;
+
+	.search {
+		display: flex;
+		align-items: center;
+		position: relative;
+		width: 90%;
+		padding: 1em;
+		border-radius: 20px;
+		background-color: #fff;
+
+        .error {
+            display: none;
+        }
+
+		input {
+			background: none;
+			border: none;
+			width: 70%;
+			padding: 0.5em;
+			font-weight: bold;
+		}
+
+		.search-icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			right: 0;
+			padding: 1em 1em;
+			cursor: pointer;
+		}
+	}
+
+	.word {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2em;
+		width: 100%;
+
+		&__left {
+			.searched-word {
+				font-size: 3rem;
+				font-weight: bold;
+			}
+
+			.phonetic {
+				margin-top: 0.5em;
+				font-size: 2rem;
+				color: rgb(177, 46, 151);
+			}
+		}
+
+		&__right .audio {
+			padding: 2em;
+			border-radius: 50%;
+			background-color: rgba(186, 87, 195, 0.3);
+			cursor: pointer;
+		}
+	}
+
+	.description {
+        display: flex;
+        flex-direction: column;
+		margin-top: 1em;
+		width: 100%;
+		padding: 1em 0;
+
+		.part-of-speech {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			font-size: 1.8rem;
+			padding: 1em 0;
+            
+			&__title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0 0 2em 0;
+				p {
+					font-weight: bold;
+					font-size: 2rem;
+				}
+				.line {
+					width: 80%;
+					height: 1px;
+					background-color: rgba(100, 100, 100, 0.2);
+				}
+			}
+
+            .meaning {
+                color: rgba(100, 100, 100, 0.8);
+                
+            }
+
+            .meanings {
+                padding: 1em;
+                
+
+                .definition {
+                    padding: 0.5em;
+					.example {
+						margin-top: 1em;
+						color: rgba(100, 100, 100, 0.8);
+					}
+                }
+            }
+
+            .synonyms {
+                color: rgba(100, 100, 100, 0.8);
+
+                .synonym {
+                    margin-left: 1em;
+                    color: rgb(140, 38, 192);
+                    font-weight: bold;
+                }
+            }
+
+		}
+	}
+}
+
+footer {
+    margin-top: 2em;
+    font-size: 1.5rem;
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: rgba(100, 100, 100, 0.2);
+    }
+
+    .source {
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+        padding: 2em 0;
+        color: rgba(100, 100, 100, 0.8);
+
+        &__link {
+            color: var(--black);
+        }
+    }
+}

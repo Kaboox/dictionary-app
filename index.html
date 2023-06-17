@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+    <script src="dist/bundle.js" defer></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <nav>
+            <div class="nav-left">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-book-2" width="40"
+                    height="40" viewBox="0 0 24 24" stroke-width="1" stroke="gray" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z"></path>
+                    <path d="M19 16h-12a2 2 0 0 0 -2 2"></path>
+                    <path d="M9 8h6"></path>
+                </svg>
+            </div>
+            <div class="nav-right">
+                <select class="font">
+                    <option value="1">Serif</option>
+                    <option value="1">Sans-Serif</option>
+                    <option value="1">Monospace</option>
+                </select>
+                <div class="line"></div>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon theme-icon" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+                </svg>
+            </div>
+        </nav>
+
+        <main>
+            <div class="search">
+                <input type="text" class="word">
+                <p class="error">Not found</p>
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="rgb(177, 46, 151)" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+                    <path d="M21 21l-6 -6"></path>
+                </svg>
+                </div>
+            </div>
+            <div class="word">
+                <div class="word__left">
+                    <p class="searched-word"></p>
+                    <p class="phonetic"></p>
+                </div>
+                <div class="word__right">
+                    <div class="audio">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="rgb(177, 46, 151)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="currentColor"></path>
+                         </svg>
+                    </div>
+                </div>
+            </div>
+            <section class="description">
+                <!-- <div class="part-of-speech">
+                   <div class="part-of-speech__title">
+                    <p></p>
+                    <div class="line"></div>
+                   </div>
+                   <p class="meaning"></p>
+                   <ul class="meanings">
+                    <li class="definition">
+                        
+                        <p class="example"></p>
+                    </li>
+                   </ul>
+                   <p class="synonyms">
+                    <span class="synonym"></span>
+                   </p>
+                </div> -->
+            </section>
+        </main>
+
+        <footer>
+            <div class="line"></div>
+            <div class="source">
+                <p>Source</p>
+                <a href="#" class="source__link"></a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
