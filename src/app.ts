@@ -8,6 +8,8 @@ const search = document.querySelector(".search-icon")! as HTMLDivElement;
 const selectFonts = document.querySelector('.font')!;
 const body = document.querySelector('body')!;
 
+const themeCheckbox = document.querySelector('.theme-checkbox')! as HTMLInputElement;
+
 const searchedWord = document.querySelector(
 	".searched-word"
 )! as HTMLParagraphElement;
@@ -140,6 +142,10 @@ selectFonts.addEventListener('click', (e:Event) => {
 	} else {
 		body.style.fontFamily = 'Monospace'
 	}
+})
+
+themeCheckbox.addEventListener('click', () => {
+	body.classList.toggle('dark')
 })
 
 search.addEventListener("click", getRequest);
