@@ -1,5 +1,17 @@
 :root {
     --white: rgb(255,255,255);
     --black: rgb(0,0,0);
-    --white-background: rgb(240,240,240);
+    --text: rgb(10,10,10);
+    --gray-text: rgba(100, 100, 100, 0.8);
+    --background: rgb(240,240,240);
+    --line: rgba(100, 100, 100, 0.2);
+    --slider-background: rgb(88,85,85);
+    --input-background: rgb(250,250,250);
+}
+
+.dark {
+    --text: rgb(230,230,230);
+    --gray-text: rgba(200, 200, 200, 0.8);
+    --background: rgb(30,30,30);
+    --line: rgba(100, 100, 100, 0.6);
 }
