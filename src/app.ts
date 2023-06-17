@@ -5,6 +5,9 @@ const word = document.querySelector(".word")! as HTMLInputElement;
 const error = document.querySelector(".error")! as HTMLParagraphElement;
 const search = document.querySelector(".search-icon")! as HTMLDivElement;
 
+const selectFonts = document.querySelector('.font')!;
+const body = document.querySelector('body')!;
+
 const searchedWord = document.querySelector(
 	".searched-word"
 )! as HTMLParagraphElement;
@@ -62,12 +65,6 @@ const handleTop = (data: paths) => {
 	phoneticWord.textContent = data[0].phonetic;
 };
 
-// const handleMeanings = (data:paths) => {
-//     let allMeanings = '';
-//     for (let i = 0; i < data[0].meanings.length; i++) {
-
-//     }
-// }
 
 const handleDescription = (data: paths) => {
 	let allDesc: string = "";
@@ -133,5 +130,18 @@ const handleSource = (data: paths) => {
 	}
 };
 
+
+selectFonts.addEventListener('click', (e:Event) => {
+	let value = (e.target! as HTMLOptionElement).value
+	if (+value == 1) {
+		body.style.fontFamily = 'serif';
+	} else if (+value == 2) {
+		body.style.fontFamily = 'sans-serif'
+	} else {
+		body.style.fontFamily = 'Monospace'
+	}
+})
+
 search.addEventListener("click", getRequest);
 getRequest();
+
