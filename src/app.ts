@@ -132,6 +132,14 @@ const handleSource = (data: paths) => {
 	}
 };
 
+const toggleTheme = () => {
+	if (themeCheckbox.checked) {
+		body.classList.add('dark')
+	} else {
+		body.classList.remove('dark')
+	}
+}
+
 
 selectFonts.addEventListener('click', (e:Event) => {
 	let value = (e.target! as HTMLOptionElement).value
@@ -144,13 +152,7 @@ selectFonts.addEventListener('click', (e:Event) => {
 	}
 })
 
-themeCheckbox.addEventListener('click', () => {
-	if (themeCheckbox.checked) {
-		body.classList.add('dark')
-	} else {
-		body.classList.remove('dark')
-	}
-})
+themeCheckbox.addEventListener('click', toggleTheme)
 
 search.addEventListener("click", getRequest);
 getRequest();
