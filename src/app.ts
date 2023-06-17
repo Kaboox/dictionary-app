@@ -145,7 +145,11 @@ selectFonts.addEventListener('click', (e:Event) => {
 })
 
 themeCheckbox.addEventListener('click', () => {
-	body.classList.toggle('dark')
+	if (themeCheckbox.checked) {
+		body.classList.add('dark')
+	} else {
+		body.classList.remove('dark')
+	}
 })
 
 search.addEventListener("click", getRequest);
