@@ -140,8 +140,7 @@ const toggleTheme = () => {
 	}
 }
 
-
-selectFonts.addEventListener('click', (e:Event) => {
+const toggleFonts = (e:Event) => {
 	let value = (e.target! as HTMLOptionElement).value
 	if (+value == 1) {
 		body.style.fontFamily = 'serif';
@@ -150,7 +149,10 @@ selectFonts.addEventListener('click', (e:Event) => {
 	} else {
 		body.style.fontFamily = 'Monospace'
 	}
-})
+}
+
+
+selectFonts.addEventListener('click', toggleFonts)
 
 themeCheckbox.addEventListener('click', toggleTheme)
 
