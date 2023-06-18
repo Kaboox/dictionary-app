@@ -29,7 +29,7 @@ const source = document.querySelector(".source")! as HTMLDivElement;
 
 const API_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
-type paths = {
+type ApiResponse = {
 	0: {
 		word: string;
 		phonetic: string;
@@ -61,25 +61,23 @@ async function getRequest() {
 	}
 }
 
-const handleChanges = (data: paths) => {
-	console.log(data);
+const handleChanges = (data: ApiResponse) => {
 	handleTop(data);
 	handleSource(data);
 	handleDescription(data);
 	handleAudio(data);
 };
 
-const handleTop = (data: paths) => {
+const handleTop = (data: ApiResponse) => {
 	searchedWord.textContent = data[0].word;
 	phoneticWord.textContent = data[0].phonetic;
 };
 
 
-const handleDescription = (data: paths) => {
+const handleDescription = (data: ApiResponse) => {
 	let allDesc: string = "";
     
 	for (let i = 0; i < data[0].meanings.length; i++) {
-        console.log(data);
         let synonyms = '';
         let synonymsBox = document.createElement('p');
         synonymsBox.classList.add('synonyms')
@@ -128,7 +126,7 @@ const handleDescription = (data: paths) => {
 	descriptionArea.innerHTML = allDesc;
 };
 
-const handleSource = (data: paths) => {
+const handleSource = (data: ApiResponse) => {
 	source.textContent = "";
 	for (const sr of data[0].sourceUrls) {
 		source.append((document.createElement("p").textContent = "Source"));
@@ -177,7 +175,7 @@ const toggleFonts = (e:Event) => {
 	}
 }
 
-const handleAudio = (data: paths) => {
+const handleAudio = (data: ApiResponse) => {
 	
 	for (const phon of data[0].phonetics) {
 		if (phon.audio.length != 0) {
@@ -202,7 +200,7 @@ selectFonts.addEventListener('click', toggleFonts)
 
 themeCheckbox.addEventListener('click', toggleTheme)
 
-audioBox?.addEventListener('click', playAudio);
+audioBox.addEventListener('click', playAudio);
 
 search.addEventListener("click", getRequest);
 document.addEventListener('keydown', handleEnter);
