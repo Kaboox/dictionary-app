@@ -10,7 +10,7 @@ const body = document.querySelector('body')!;
 
 
 const themeCheckbox = document.querySelector('.theme-checkbox')! as HTMLInputElement;
-const themeIcon = document.querySelector('.theme-icon')!;
+const themeIcon = document.querySelector('.theme-icon')! as HTMLDivElement;
 
 const audioBox = document.querySelector('.audio')! as HTMLDivElement;
 let audio = document.querySelector('.speech')! as HTMLAudioElement;
@@ -134,7 +134,7 @@ const handleSource = (data: ApiResponse) => {
 		src.setAttribute("href", sr);
 		src.textContent = sr;
 		src.classList.add("source__link");
-		source?.appendChild(src);
+		source.appendChild(src);
 	}
 };
 
