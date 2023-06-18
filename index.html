@@ -33,28 +33,40 @@
                     <input type="checkbox" class="theme-checkbox">
                     <span class="slider"></span>
                 </label>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon theme-icon" width="24"
-                    height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
-                </svg>
+                <div class="theme-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun-high" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z"></path>
+                        <path d="M6.343 17.657l-1.414 1.414"></path>
+                        <path d="M6.343 6.343l-1.414 -1.414"></path>
+                        <path d="M17.657 6.343l1.414 -1.414"></path>
+                        <path d="M17.657 17.657l1.414 1.414"></path>
+                        <path d="M4 12h-2"></path>
+                        <path d="M12 4v-2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="M12 20v2"></path>
+                    </svg>
+                </div>
             </div>
         </nav>
 
         <main>
             <div class="search">
                 <input type="text" class="word">
+
                 <p class="error">Not found</p>
                 <div class="search-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24"
-                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="rgb(177, 46, 151)" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
-                    <path d="M21 21l-6 -6"></path>
-                </svg>
+                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="rgb(177, 46, 151)" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+                        <path d="M21 21l-6 -6"></path>
+                    </svg>
                 </div>
+
             </div>
             <div class="word">
                 <div class="word__left">
@@ -63,10 +75,15 @@
                 </div>
                 <div class="word__right">
                     <div class="audio">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="rgb(177, 46, 151)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="rgb(177, 46, 151)"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="currentColor"></path>
-                         </svg>
+                            <path
+                                d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"
+                                stroke-width="0" fill="currentColor"></path>
+                        </svg>
+                        <audio src="" class="speech"></audio>
                     </div>
                 </div>
             </div>

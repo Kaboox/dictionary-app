@@ -15,8 +15,6 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	min-height: 100vh;
 	font-size: 1rem;
 	font-family: serif;
@@ -126,33 +124,40 @@ main {
 	.search {
 		display: flex;
 		align-items: center;
+		gap: .5em;
 		position: relative;
 		width: 90%;
 		padding: 1em;
 		border-radius: 20px;
 		background-color: var(--input-background);
 
-        .error {
-            display: none;
-        }
-
+		
 		input {
 			background: none;
 			border: none;
-			width: 70%;
+			max-width: 50%;
 			padding: 0.5em;
 			font-weight: bold;
 		}
-
-		.search-icon {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			position: absolute;
-			right: 0;
-			padding: 1em 1em;
-			cursor: pointer;
-		}
+		
+		
+			.error {
+				display: none;
+				color: var(--black);
+				font-size: 1.2rem;
+				
+			}
+	
+			.search-icon {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				right: 0;
+				padding: 1em 1em;
+				cursor: pointer;
+			}
+		
 	}
 
 	.word {
@@ -264,4 +269,10 @@ footer {
 
         
     }
+}
+
+@media (min-width: 375px) {
+	main .search input {
+		max-width: 70%;
+	}
 }
