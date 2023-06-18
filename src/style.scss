@@ -32,6 +32,10 @@ a {
 	color: var(--text);
 }
 
+.grey-text {
+	color: var(--gray-text);
+}
+
 nav {
 	display: flex;
 	justify-content: space-between;
@@ -50,7 +54,6 @@ nav {
 			color: var(--text);
 
 			option {
-				// padding: 1em;
 				color: var(--black);
 				font-weight: bold;
 			}
@@ -76,13 +79,13 @@ nav {
 
 			.slider {
 				position: absolute;
-				cursor: pointer;
 				top: 0;
 				left: 0;
 				right: 0;
 				bottom: 0;
 				border-radius: 34px;
 				background-color: var(--slider-background);
+				cursor: pointer;
 				transition: 0.4s;
 			}
 
@@ -99,7 +102,7 @@ nav {
 			}
 
 			input:checked + .slider {
-				background-color: rgb(177, 46, 151);
+				background-color: var(--purple);
 			}
 
 			input:focus + .slider {
@@ -118,7 +121,6 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-    
 	margin-top: 1em;
 
 	.search {
@@ -176,14 +178,14 @@ main {
 			.phonetic {
 				margin-top: 0.5em;
 				font-size: 2rem;
-				color: rgb(177, 46, 151);
+				color: var(--purple)
 			}
 		}
 
 		&__right .audio {
 			padding: 2em;
 			border-radius: 50%;
-			background-color: rgba(186, 87, 195, 0.3);
+			background-color: var(--audio-background);
 			cursor: pointer;
 		}
 	}
@@ -191,16 +193,16 @@ main {
 	.description {
         display: flex;
         flex-direction: column;
-		margin-top: 1em;
 		width: 100%;
 		padding: 1em 0;
+		margin-top: 1em;
 
 		.part-of-speech {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			font-size: 1.8rem;
 			padding: 1em 0;
+			font-size: 1.8rem;
             
 			&__title {
                 display: flex;
@@ -209,8 +211,8 @@ main {
                 width: 100%;
                 padding: 0 0 2em 0;
 				p {
-					font-weight: bold;
 					font-size: 2rem;
+					font-weight: bold;
 				}
 				.line {
 					width: 80%;
@@ -219,10 +221,7 @@ main {
 				}
 			}
 
-            .meaning {
-                color: var(--gray-text);
-                
-            }
+            
 
             .meanings {
                 padding: 1em;
@@ -232,20 +231,17 @@ main {
                     padding: 0.5em;
 					.example {
 						margin-top: 1em;
-						color: var(--gray-text);
+						
 					}
                 }
             }
 
-            .synonyms {
-                color: var(--gray-text);
-
-                .synonym {
+            .synonyms .synonym {
                     margin-left: 1em;
-                    color: rgb(140, 38, 192);
+                    color: var(--synonym-color);
                     font-weight: bold;
                 }
-            }
+            
 
 		}
 	}
@@ -265,7 +261,6 @@ footer {
         flex-direction: column;
         gap: .5em;
         padding: 2em 0;
-        color: var(--gray-text);
 
         
     }
@@ -274,5 +269,11 @@ footer {
 @media (min-width: 375px) {
 	main .search input {
 		max-width: 70%;
+	}
+}
+
+@media (min-width: 992px) {
+	main .search input {
+		max-width: 80%;
 	}
 }

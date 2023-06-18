@@ -100,6 +100,7 @@ const handleDescription = (data: paths) => {
             const ex = document.createElement('p');
             
             ex.classList.add('example')
+            ex.classList.add('grey-text')
             liEl.classList.add('definition');
             liEl.textContent = data[0].meanings[i].definitions[j].definition;
             if (data[0].meanings[i].definitions[j].example) {
@@ -113,12 +114,12 @@ const handleDescription = (data: paths) => {
      <p>${data[0].meanings[i].partOfSpeech}</p>
      <div class="line"></div>
     </div>
-    <p class="meaning">Meaning</p>
+    <p class="meaning grey-text">Meaning</p>
     <ul class="meanings">
     ${ulList.innerHTML}
     
     </ul>
-    <p class="synonyms">${synonymsBox.textContent}
+    <p class="synonyms grey-text">${synonymsBox.textContent}
      <span class="synonym">${synonyms}</span>
     </p>
  </div>`;
